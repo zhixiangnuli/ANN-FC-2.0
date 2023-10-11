@@ -451,14 +451,14 @@ def train(train_data, test_data, trans = None,
     target_scale_train = get_data_scale(train['target'])
 
     #print(len(feature[0]), len(target), feature_scale, target_scale)
-    print "*** Number of training examples: " + str(len(train['target']))
+    print ("*** Number of training examples: " + str(len(train['target'])))
     
     # testing featrue and target
     test = read_data(test_data)
     feature_scale_test = get_data_scale(test['feature'])
     target_scale_test = get_data_scale(test['target'])
 
-    print "*** Number of testing examples: " + str(len(test['target']))
+    print ("*** Number of testing examples: " + str(len(test['target'])))
 
     feature_scale = get_data_rescale(feature_scale_train, feature_scale_test)
     target_scale = get_data_rescale(target_scale_train, target_scale_test)
@@ -478,7 +478,7 @@ def train(train_data, test_data, trans = None,
                 method = trans)
 
         has_val_data = True
-        print "*** Number of validation examples: " + str(len(validation['target']))
+        print ("*** Number of validation examples: " + str(len(validation['target'])))
 
     scale_feature(train['feature'], feature_scale)
     scale_target(train['target'], target_scale, method = trans)
@@ -486,13 +486,13 @@ def train(train_data, test_data, trans = None,
     scale_feature(test['feature'], feature_scale)
     scale_target(test['target'], target_scale, method = trans)
 
-    loss_opt = 1.0;
+    loss_opt = 1.0
     loss_history_opt = None
     W_opt = None
     b_opt = None
     pred_opt = None
 
-    print "*** Training begins ..."
+    print ("*** Training begins ...")
     for i in range(train_number):
         print("============ TRAINING PROCESS: %d ============ " %(i + 1))
         W, b, loss, pred, loss_history = train_model(
