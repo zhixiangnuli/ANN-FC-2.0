@@ -58,7 +58,7 @@ def get_data_scale(data):
     return scale
 
 def get_data_rescale(scale1, scale2):
-    nc = len(scale1) / 2
+    nc = int(len(scale1)/2)
 
     rescale = []
     for i in range(nc):
@@ -324,7 +324,7 @@ def train_model(train_data, test_data,
     model.add(keras.layers.Dense(nstatus))
 
 
-    optimizer = tf.train.AdamOptimizer(0.1)
+    optimizer = tf.optimizers.Adam(0.1)
 
     model.compile(loss='mse', optimizer = optimizer, metrics=['mae'])
 
