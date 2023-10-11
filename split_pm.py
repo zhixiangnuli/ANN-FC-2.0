@@ -68,9 +68,9 @@ def get_data_rescale(scale1, scale2):
             rescale.append(scale2[i*2])
 
         if scale1[i*2+1] < scale2[i*2+1]:
-            rescale.append(scale1[i*2+1])
-        else:
             rescale.append(scale2[i*2+1])
+        else:
+            rescale.append(scale1[i*2+1])
 
     return rescale
 
