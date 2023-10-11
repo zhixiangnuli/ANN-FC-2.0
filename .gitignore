@@ -1,0 +1,15 @@
+*.pyc
+*.index
+*.o
+*.hh
+*.cb
+*.swp
+*.eps
+*.pdf
+vgcore.*
+
+# VTK files
+*.vtk
+
+# Log files
+*.log
